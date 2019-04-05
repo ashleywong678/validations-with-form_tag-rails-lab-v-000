@@ -15,6 +15,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       @post = Post.find(params[:id]).assign_attributes(post_params)
+      binding.pry
       render :edit
     end
   end
