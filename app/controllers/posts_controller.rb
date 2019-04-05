@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       @post.update(post_params)
       redirect_to post_path(@post)
     else
-      @post = Post.new(post_params)
+      @post = Post.find(params[:id]).assign_attributes(post_params)
       render :edit
     end
   end
