@@ -12,6 +12,10 @@
   </div>
 <% end %>
 
+<div class="field<%= ' field_with_errors' if @post.errors[:name].any? %>">
+  <%= label_tag "name", "Name" %>
+  <%= text_field_tag "name", @post.name %>
+</div>
   <div class="field<%= ' field_with_errors' if @post.errors[:title].any? %>">
     <%= label_tag "title", "Title" %>
     <%= text_field_tag "title", @post.title %>
@@ -32,6 +36,6 @@
     <br />
     <%= text_area_tag "content", @post.content %>
   </div>
-  
+
   <%= submit_tag "Update" %>
 <% end %>
